@@ -57,14 +57,11 @@ class Blog extends Component {
         
     
         addBlog(title, content, image) {
-            const { id, title, content, tags, selectedFile } = this.state;
             let formData = new FormData();
             
-            formData.append("id", id);
             formData.append("title", title);
             formData.append("content", content);
-            formData.append("tags", tags);
-            formData.append("selectedFile", selectedFile);
+            formData.append("image", image);
             var myForm = document.getElementById('myForm');
             console.log('form' +myForm);
             
