@@ -1,5 +1,5 @@
 import mailgunloader from 'mailgun-js';
-import config from '../config';
+import { config } from '../config';
 //let api_key = 'cfg.mailgun_api_key';
 let domain = 'sandboxe08fbb44d35e48d9aa500535b31d9d39.mailgun.org';
 
