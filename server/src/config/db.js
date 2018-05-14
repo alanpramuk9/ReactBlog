@@ -11,7 +11,7 @@ let pool = mysql.createPool({
 
 // let pool = mysql.createPool({
 //     connectionLimit: 10,
-//     host: 'process.env',
+//     host: 'localhost',
 //     user: 'root',
 //     password: 'sesame',
 //     database: 'blog'
