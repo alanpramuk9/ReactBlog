@@ -1,13 +1,21 @@
 import mysql from 'mysql';
+import {config} from '../config';
 
 let pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
-    user: 'root',
-    password: 'sesame',
-    database: 'blog'
+    host: config.DB_HOST,
+    user: config.DB_USER,
+    password: config.DB_PASS,
+    database: config.DB_NAME
 });
 
+// let pool = mysql.createPool({
+//     connectionLimit: 10,
+//     host: 'process.env',
+//     user: 'root',
+//     password: 'sesame',
+//     database: 'blog'
+// });
 async function executeQuery(sql, args = []) {
     let connection = await getConnection();
     return sendQueryToDB(connection, sql, args);
