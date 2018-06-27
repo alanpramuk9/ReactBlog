@@ -1,13 +1,13 @@
 import mysql from 'mysql';
 import {config} from '../config';
 
-let pool = mysql.createPool({
-    connectionLimit: 10,
-    host: config.DB_HOST,
-    user: config.DB_USER,
-    password: config.DB_PASS,
-    database: config.DB_NAME
-});
+// let pool = mysql.createPool({
+//     connectionLimit: 10,
+//     host: config.DB_HOST,
+//     user: config.DB_USER,
+//     password: config.DB_PASS,
+//     database: config.DB_NAME
+// });
 
 // let pool = mysql.createPool({
 //     connectionLimit: 10,
@@ -16,6 +16,13 @@ let pool = mysql.createPool({
 //     password: 'sesame',
 //     database: 'blog'
 // });
+let pool = mysql.createPool({
+    connectionLimit: 10,
+    host: 'us-cdbr-iron-east-04.cleardb.net',
+    user: 'b72999f7d91c46',
+    password: 'ab46ff12',
+    database: 'heroku_82e517aefa9690e'
+});
 async function executeQuery(sql, args = []) {
     let connection = await getConnection();
     return sendQueryToDB(connection, sql, args);
