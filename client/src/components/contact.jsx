@@ -53,25 +53,30 @@ class Contact extends Component {
     render() {
         return (
             <React.Fragment>
-            <br></br>
-            <br></br>
-            <br></br>
             <div className='container'>
+            <div className='contactContainer boxShadowLightest'>
+                <h3 style={{color: 'white', textAlign: 'center'}}>Let's Get In Touch</h3>
+                <hr style={{backgroundColor: 'white', width:'60%', marginBottom: '30px', height: '2px', boxShadow: '0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)'}}/>
                 <form onSubmit= {(e) => this.handleSubmit(e)}>
-                    <div className="form-group">
-                        <label htmlFor="name"> Name </label>
-                        <input onChange={(e) => this.handleName(e.target.value )} id="name" type="text" className="form-control" require/>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <div className="contactLabel " style={{width: '40%'}}>
+                        <label htmlFor="name2"> Name </label>
+                        <input onChange={(e) => this.handleName(e.target.value )} id="name2" type="text" className="form-control" require/>
                     </div>
-                    <div className="form-group">
+                    <div className="contactLabel" style={{width: '40%'}}>
                         <label htmlFor="email"> Email </label>
                         <input  onChange={(e) => this.handleEmail(e.target.value )}id="email" type="email" className="form-control" require />
                     </div>
-                    <div className="form-group">
+                    </div>
+                    <div className="form-group contactLabel">
                         <label htmlFor="message"> Message </label>
                         <textarea onChange={(e) => this.handleMessage(e.target.value )} cols="30" rows="10" className="form-control"></textarea>
                     </div>
-                    <input type="submit" className="btn btn-primary" />
+                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <input type="submit" className="btn btn-danger w-50 p-2 mt-3"/>
+                    </div>
                 </form>
+                </div>
             </div>
             </React.Fragment>
         )

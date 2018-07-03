@@ -9,13 +9,6 @@ import {config} from '../config';
 //     database: config.DB_NAME
 // });
 
-// let pool = mysql.createPool({
-//     connectionLimit: 10,
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'sesame',
-//     database: 'blog'
-// });
 let pool = mysql.createPool({
     connectionLimit: 10,
     host: 'us-cdbr-iron-east-04.cleardb.net',
@@ -23,6 +16,14 @@ let pool = mysql.createPool({
     password: 'ab46ff12',
     database: 'heroku_82e517aefa9690e'
 });
+
+// let pool = mysql.createPool({
+//     connectionLimit: 10,
+//     host: 'us-cdbr-iron-east-04.cleardb.net',
+//     user: 'b72999f7d91c46',
+//     password: 'sesame',
+//     database: 'heroku_82e517aefa9690e'
+// });
 async function executeQuery(sql, args = []) {
     let connection = await getConnection();
     return sendQueryToDB(connection, sql, args);

@@ -31,7 +31,7 @@ class CheckoutForm extends Component {
     render() {
         return (
             <React.Fragment>
-            <div className='container checkout' id='checkout'>
+            <div className='container checkout boxShadow' id='checkout'>
             <div>
                 <h4>Enter your card information: </h4>
             </div>

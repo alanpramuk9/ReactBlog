@@ -65,7 +65,7 @@ class Signup extends Component {
     handlePasswordChange(value) {
         this.setState({ password: value });
     }
-
+    
     render() {
        const { from } = this.props.location.state || { from: { pathname: '/' } };
        const { redirectToReferrer, checkingLogin } = this.state;
@@ -81,7 +81,12 @@ class Signup extends Component {
 
        return (
            <Fragment>
-                <p>Become a user!</p>
+           <div className="jumbotron" style={{height:'86vh', marginBottom: '0px'}}>
+           <div classname="container" style={{}}>
+           <div className="row align-items-center w-100">
+           <div className="col-md-6 mx-auto mt-5 p-5 whitetext boxShadow" style={{backgroundColor:'#0094D8'}}>
+                <h3 style={{textAlign: 'center'}}>Become a Member!</h3>
+                <hr style={{backgroundColor:'white', width:'75%'}}/>
                 <form onSubmit={(e) => this.signup(e)}>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -94,8 +99,12 @@ class Signup extends Component {
                     {this.state.feedbackMessage ? (
                         <p>{ this.state.feedbackMessage }</p>
                     ): null}
-                    <button type="submit" value="Signup" className="btn btn-primary" />
+                    <button type="submit" value="Signup" className="btn btn-danger"> Signup </button>
                 </form>
+                </div>
+                </div>
+                </div>
+                </div>
             </Fragment>
        );
     }

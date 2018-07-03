@@ -16,8 +16,6 @@ router.route('*')
     .post(tokenMiddleware, isLoggedIn)
     .put(tokenMiddleware, isLoggedIn)
     .delete(tokenMiddleware, isLoggedIn);
-
-
 router.use('/blogs', blogRouter );
 router.use('/users', usersRouter);
 router.use('/author', authorRouter);

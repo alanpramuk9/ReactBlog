@@ -18,7 +18,7 @@ function configurePassport(app) {
             // array destructuring. find() will return an array of results.
             // destructuring the first (and hopefully only) result into the user variable
             let [user] = await authorsTable.find({ email });
-
+                
             //logic for checking if hash matches password
             if (user && user.hash) {
                 //plaintext password, hash from database

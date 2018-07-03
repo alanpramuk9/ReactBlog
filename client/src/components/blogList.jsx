@@ -15,12 +15,18 @@ class BlogList extends Component {
         return formattedDate;
         
     }
+
+    //only display initial 100 characters
+    lessContent () {
+        let contentString = this.props.blog.content;
+        let shortened = contentString.substring(0,100); 
+        return shortened + '...';
+    }
     
     render() {
     return (
         <React.Fragment>
-            
-            <div className="col-4">
+            <div className="col-4" style={{marginBottom: '10px'}}>
             <div className="card text-center">
                 <div className="card-header">
                     <h3>{this.props.blog.title} </h3>
@@ -31,14 +37,16 @@ class BlogList extends Component {
                     {this.getDateTime()}
                 </div>
                 <div className="card-body">
-                    <p className="card-text">{this.props.blog.content}</p> 
+                    
+                    <p className="card-text">{this.lessContent()}</p> 
                     {
                         this.props.blog.image != null && 
                        <img src={this.props.blog.image} className="card-text"></img> 
                     }
-                   
+                    <button className="btn btn-primary"><Link to={"/blogs/" + this.props.blog.id}> <span className="cardLinks">Read More </span> </Link> </button>
+                    {/*<button className="btn btn-dark"><Link to={"/blogs/" + this.props.blog.id}> <span className="cardLinks">Read More </span> </Link> </button> */}
                 </div>
-                <Link to={"/blogs/" + this.props.blog.id}> See More </Link>
+                
                 
                 </div>
             

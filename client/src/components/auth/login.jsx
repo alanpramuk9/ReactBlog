@@ -61,7 +61,13 @@ class Login extends Component {
 
        return (
            <Fragment>
-                <p>You must be logged in to view this page.</p>
+                <div className="jumbotron" style={{height:'86vh', marginBottom: '0px'}}>
+                <div classname="container" style={{}}>
+                <div className="row align-items-center w-100">
+                <div className="col-md-6 mx-auto mt-5 p-5 whitetext boxShadow" style={{backgroundColor:'#0094D8'}}>
+
+                <h3 style={{textAlign: 'center'}}>Login to submit and edit posts</h3>
+                <hr style={{backgroundColor:'white', margin: '15px 0px 40px 0px'}}/>
                 <form onSubmit={(e) => this.login(e)}>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -74,8 +80,12 @@ class Login extends Component {
                     {this.state.feedbackMessage ? (
                         <p>{ this.state.feedbackMessage }</p>
                     ): null}
-                    <button type="submit" value="Login" className="btn btn-primary" />
+                    <button type="submit" value="Login" className="btn btn-danger mx-auto my-2" >Login </button>
                 </form>
+                </div>
+                </div>
+                </div>
+                </div>
             </Fragment>
        );
     }

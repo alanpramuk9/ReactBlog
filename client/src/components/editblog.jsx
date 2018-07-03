@@ -55,6 +55,7 @@ class EditBlog extends Component {
                                     <input type="text" className="form-control p-1 m-1 bg-light" placeholder="Edit Content" ref={(a) => this.inputElement = a} />
                                     <button onClick={this.editThisBlog} className="btn btn-primary w-100 p-1 m-1">Submit Edit</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>

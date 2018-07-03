@@ -19,7 +19,6 @@ app.use(express.static(CLIENT_PATH));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-
 configurePassport(app); 
 
 app.use('/api', routes);
