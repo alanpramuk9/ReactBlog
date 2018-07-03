@@ -9,7 +9,7 @@ class Input extends Component {
             image: "",
             imagePreviewUrl: ""
         }
-        //this.handleImageChange = this.handleImageChange.bind(this);
+        this.handleImageChange = this.handleImageChange.bind(this);
         
     }
         handleTitleChange(title) {
@@ -20,7 +20,6 @@ class Input extends Component {
         }
         handleImageChange(e) {
             e.preventDefault();
-        
             let reader = new FileReader();
            //console.log('e' +images.target.files[0].name);
            let value = e.target.files[0];
@@ -38,10 +37,6 @@ class Input extends Component {
               }
             );
             console.log('reader read as text' +image);
-            
-            //}
-            
-            //console.log();
         }
             reader.readAsDataURL(value);
             //reader.readAsDataURL(file)
@@ -53,13 +48,6 @@ class Input extends Component {
         if (imagePreviewUrl) {
         imagePreview = (<img className='inputImage'src={imagePreviewUrl} />);
         }
-//     <form onSubmit={this.handleSubmit}>
-//     <label>
-//       Essay:
-//       <textarea value={this.state.value} onChange={this.handleChange} />
-//     </label>
-//     <input type="submit" value="Submit" />
-//   </form>
         return (
         <div>
             <form id="myForm" name="myForm" method="post" action="/">

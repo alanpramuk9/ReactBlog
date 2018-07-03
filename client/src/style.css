@@ -245,3 +245,23 @@ a.linkNoDecoration {
    
     padding:5px;
 }
+
+
+/* add blog page */
+.addContainer {
+    height: 80vh;
+    padding: 50px;
+    border-radius: 5px;
+    background-color: #0094D8;
+    margin: 30px auto !important;
+}
+.addUnderline {
+    width: 70%;
+    margin: 10px auto 30px auto;
+    background-color: white;
+    height: 2px;
+}
+.writeBlog {
+    height: 40vh;
+}
+.postBtn {min-width: 15%; font-size: 1.15em; padding: 10px;}

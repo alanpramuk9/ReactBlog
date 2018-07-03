@@ -5,7 +5,7 @@ import Blog from './blog';
 import Header from './header';
 import SingleBlog from './singleblog';
 import EditBlog from './editblog';
-import AddBlog from './addBlog';
+import AddPost from './addpost';
 import PrivateRoute from './auth/privateRoute';
 import Login from './auth/login';
 import Logout from './auth/logout';
@@ -65,7 +65,7 @@ class Navigation extends Component {
                         <Route exact path="/signup" component={Signup} />
                         <Route exact path="/donate" component={Donate} />
                         <Route exact path='/contact' component={Contact} />
-                        <PrivateRoute exact path="/addpost" component={AddBlog} />
+                        <PrivateRoute exact path="/addpost" component={AddPost} />
                         <PrivateRoute exact path="/blogs/edit/:id" component={EditBlog} />
                         <Route exact path="/blogs/:id" component={SingleBlog} />
                         

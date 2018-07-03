@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { render } from 'react-dom';
 import BlogList from './blogList';
@@ -61,7 +61,7 @@ class Blog extends Component {
         
         console.log(this.state);
         return (
-        <div>
+        <Fragment>
             <div className="jumbotron jumbotron-fluid jumbo boxShadowLighterest">
             <div className="container">
             <div className="mainArticle">
@@ -86,7 +86,7 @@ class Blog extends Component {
             </div>
             </div>
             <div className="container">
-        <div id='success'></div>
+            <div style={{}} id='success'></div>
             
             <div className="searchBox">
             <span className="searchTitle">Search for a blog by title: </span>
@@ -110,7 +110,7 @@ class Blog extends Component {
             </div>
             </div>
             
-        </div>
+        </Fragment>
         )
     }
 }
