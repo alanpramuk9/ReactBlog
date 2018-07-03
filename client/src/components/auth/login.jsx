@@ -11,7 +11,7 @@ class Login extends Component {
             email: '',
             password: '',
             feedbackMessage: '',
-            checkingLogin: true
+            checkingLogin: false
         };
     }
 
@@ -62,7 +62,7 @@ class Login extends Component {
        return (
            <Fragment>
                 <div className="jumbotron" style={{height:'86vh', marginBottom: '0px'}}>
-                <div classname="container" style={{}}>
+                <div className="container" style={{}}>
                 <div className="row align-items-center w-100">
                 <div className="col-md-6 mx-auto mt-5 p-5 whitetext boxShadow" style={{backgroundColor:'#0094D8'}}>
 
@@ -78,7 +78,7 @@ class Login extends Component {
                         <input id="password" className="form-control" type="password" onChange={(e) => this.handlePasswordChange(e.target.value)} required /> 
                     </div>
                     {this.state.feedbackMessage ? (
-                        <p>{ this.state.feedbackMessage }</p>
+                        <p className="warningMessage">{ this.state.feedbackMessage }</p>
                     ): null}
                     <button type="submit" value="Login" className="btn btn-danger mx-auto my-2" >Login </button>
                 </form>

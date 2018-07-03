@@ -15,11 +15,11 @@ function decode(value) {
     const decipher = createDecipher(ALGORITHM, SECRET);
     let decoded = decipher.update(value, 'base64', 'ascii');
     decoded += decipher.final('ascii');
-    const split = decoded.split('_');
+    const tokenSplit = decoded.split('_');
 
-    split.shift();
+    tokenSplit.shift();
 
-    return split.join('_');
-}
+    return tokenSplit.join('_');
+}   
 
 export { encode, decode };

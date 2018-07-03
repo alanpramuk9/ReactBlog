@@ -62,7 +62,7 @@ class Blog extends Component {
         console.log(this.state);
         return (
         <div>
-            <div className="jumbotron jumbotron-fluid jumbo">
+            <div className="jumbotron jumbotron-fluid jumbo boxShadowLighterest">
             <div className="container">
             <div className="mainArticle">
                 <img src={imageName }  alt="codingImage" className="img-thumbnail imageMain" />
@@ -79,7 +79,7 @@ class Blog extends Component {
             </div>
             <div className="mainBody">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates veritatis quidem esse eius magnam unde tempora doloribus autem ad nemo nostrum, debitis corrupti? Vel, consequatur. Sunt odio quidem nisi officia fugit cupiditate est blanditiis, officiis iure repellendus ad, modi nobis. </p>
-                 <button style={{alignSelf: 'flex-end'}} className="btn btn-danger">Read More </button>
+                 <button style={{alignSelf: 'flex-end'}} className="btn btn-danger buttonShadow">Read More </button>
             </div>
             </div>
             </div>

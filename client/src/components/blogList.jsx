@@ -27,9 +27,9 @@ class BlogList extends Component {
     return (
         <React.Fragment>
             <div className="col-4" style={{marginBottom: '10px'}}>
-            <div className="card text-center">
+            <div className="card text-center boxShadowLighterester">
                 <div className="card-header">
-                    <h3>{this.props.blog.title} </h3>
+                    <h4>{this.props.blog.title} </h4>
                     <FontAwesome
                         className='calendar-alt'
                         name='calendar-alt'
@@ -43,7 +43,7 @@ class BlogList extends Component {
                         this.props.blog.image != null && 
                        <img src={this.props.blog.image} className="card-text"></img> 
                     }
-                    <button className="btn btn-primary"><Link to={"/blogs/" + this.props.blog.id}> <span className="cardLinks">Read More </span> </Link> </button>
+                    <button className="btn btn-primary buttonShadow"><Link to={"/blogs/" + this.props.blog.id}> <span className="cardLinks">Read More </span> </Link> </button>
                     {/*<button className="btn btn-dark"><Link to={"/blogs/" + this.props.blog.id}> <span className="cardLinks">Read More </span> </Link> </button> */}
                 </div>
                 

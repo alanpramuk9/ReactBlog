@@ -59,11 +59,11 @@ class Contact extends Component {
                 <hr style={{backgroundColor: 'white', width:'60%', marginBottom: '30px', height: '2px', boxShadow: '0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)'}}/>
                 <form onSubmit= {(e) => this.handleSubmit(e)}>
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <div className="contactLabel " style={{width: '40%'}}>
+                    <div className="contactLabel " style={{width: '45%'}}>
                         <label htmlFor="name2"> Name </label>
                         <input onChange={(e) => this.handleName(e.target.value )} id="name2" type="text" className="form-control" require/>
                     </div>
-                    <div className="contactLabel" style={{width: '40%'}}>
+                    <div className="contactLabel" style={{width: '45%'}}>
                         <label htmlFor="email"> Email </label>
                         <input  onChange={(e) => this.handleEmail(e.target.value )}id="email" type="email" className="form-control" require />
                     </div>

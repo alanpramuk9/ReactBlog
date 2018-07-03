@@ -10,7 +10,7 @@ import PrivateRoute from './auth/privateRoute';
 import Login from './auth/login';
 import Logout from './auth/logout';
 import AuthButton from './auth/authButton';
-import Signup from './auth/signup';
+import Signup from './signup';
 import Donate from './donate';
 import Contact from './contact';
 import About from './about';

@@ -12,10 +12,13 @@ let router = Router();
 router.use('/auth', authRouter);
 router.use('/donate', stripeDonationsRouter);
 router.use('/contact', contactRouter );
-router.route('*')
+router.route('/blogs')
     .post(tokenMiddleware, isLoggedIn)
     .put(tokenMiddleware, isLoggedIn)
     .delete(tokenMiddleware, isLoggedIn);
+
+router.route('/auth')
+    .post(tokenMiddleware, isLoggedIn);
 router.use('/blogs', blogRouter );
 router.use('/users', usersRouter);
 router.use('/author', authorRouter);

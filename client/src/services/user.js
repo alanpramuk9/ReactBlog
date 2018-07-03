@@ -5,7 +5,7 @@ let loggedIn = false;
 function isLoggedIn() {
     if (localStorage.getItem('authToken')) {
         baseService.populateAuthToken();
-        return loggedIn =true;
+        return loggedIn = true;
     }
     return loggedIn;
 }
@@ -80,4 +80,8 @@ function me() {
     return baseService.get('/api/users/me');
 }
 
-export { isLoggedIn, checkLogin, login, logout };
+function newUser(name, email, hash) {
+    return baseService.post('/api/users/', {name, email, hash})
+}
+
+export { isLoggedIn, checkLogin, login, logout, newUser };

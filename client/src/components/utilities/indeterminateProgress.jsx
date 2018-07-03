@@ -13,7 +13,7 @@ class IndeterminateProgress extends Component {
         }
 
         return (
-            <div className="card mx-auto" style={{ width: '400px' }}>
+            <div className="card mx-auto" style={{ width: '400px', marginTop: '50px'}}>
                 <div className="card-body">
                     <p className="card-text text-center">{ message }</p>
                     <div className="progress">
