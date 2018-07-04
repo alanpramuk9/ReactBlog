@@ -55,7 +55,7 @@ class SingleBlog extends Component {
         <div className="blogContainer boxShadow">
 
         <h2 style={{marginBottom: '20px'}}>{this.state.objects.title}</h2>
-        <p style={{fontSize: '1.2em', marginBottom: '20px'}}>{this.state.objects.content}</p>
+        <p style={{fontSize: '1.2em', marginBottom: '50px'}}>{this.state.objects.content}</p>
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
             <Link className="btn btn-light my-1" to="/">Go Back to All Blog Postings</Link>
             <div style={{display: 'flex' , alignItems: 'flex-end'}}>

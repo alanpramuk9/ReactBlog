@@ -6,36 +6,41 @@ class EditBlog extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            object: []
+            title: "",
+            content: ""
+          
         }       
-        this.editThisBlog = this.editThisBlog.bind(this);
+        
     }
 
     componentDidMount() {
-        // let url = '/api/blogs/' + this.props.match.params.id;
-        // fetch(url, {
-        //     method: 'GET',
-        //     headers: new Headers({ 'Content-Type': 'application/json' })
-        // })
-        //     .then(response => response.json())
-        //     .then(object => this.setState({ object: object }))
-        //let id = this.props.match.params.id;
-        blogService.all();
+        blogService.one(this.props.match.params.id)
+            .then((blog) => {
+                let title = blog.title;
+                let content = blog.content;
+                this.setState({
+                    title: title,
+                    content: content,
+                })
+            }).catch((err) => {
+                console.log(err);
+            });
     }
+
+    handleTitleChange(title) {
+        this.setState({ title });
+    };
+
+    handleContentChange(content) {
+        this.setState({ content });
+    };
     
-    editThisBlog(event) {
-        event.preventDefault();
-        let id = this.props.match.params.id;
-        let obj = { content: this.inputElement.value };
-        let backUrl = '/blogs/' + this.props.match.params.id;
+    editThisBlog(title, content) {
         
-        // fetch(url, {
-        //     method: 'PUT',
-        //     body: JSON.stringify(obj),
-        //     headers: new Headers({
-        //         'Content-Type': 'application/json'
-        //     })
-        blogService.update(id, obj)
+        //let id = this.props.match.params.id;
+        
+        let backUrl = '/blogs/' + this.props.match.params.id;
+        blogService.update(this.props.match.params.id, { content, title })
         .then(this.props.history.push(backUrl))
         .catch((err) => console.log(err));
     }
@@ -43,23 +48,27 @@ class EditBlog extends Component {
     render() {
         return (
             <Fragment>
-            <br></br>
-            <br></br>
-            <br></br>
-                <div className="container border rounded mt-2 text-center" style={{ backgroundColor: `#FFFFFF` }}>
-                    <div className="row">
-                        <div className="col">
+                <div className="container" style={{}}>
+                    <div className="editContainer boxShadow">
                             <form>
-                                <div className="form-group p-1 m-1">
-                                <label htmlFor="chirp-text">Edit Blog:</label>
-                                    <input type="text" className="form-control p-1 m-1 bg-light" placeholder="Edit Content" ref={(a) => this.inputElement = a} />
-                                    <button onClick={this.editThisBlog} className="btn btn-primary w-100 p-1 m-1">Submit Edit</button>
+                                <div className="form-group editLabel">
+                                    <label htmlFor="chirp-text">Edit Title:</label>
+                                    <input type="text" className="form-control" value={`${this.state.title}`} onChange={(event) => this.handleTitleChange(event.target.value)} />
                                 </div>
-
+                                <div className="form-group mb-4 editLabel">
+                                    <label htmlFor="chirp-text">Edit Content:</label>
+                                    <textarea className="form-control txtboxShadow"
+                                        style={{height: '45vh'}}
+                                        value={`${this.state.content}`}
+                                        onChange={(event) => this.handleContentChange(event.target.value)}></textarea>
+                                </div>
+                                <div style={{}}>
+                                <button onClick={() => {this.editThisBlog(this.state.content, this.state.title);}} className="btn btn-danger editBtn">Submit Edit</button>
+                                </div>
                             </form>
                         </div>
-                    </div>
-                </div>
+                        </div>
+                    
             </Fragment>
         )
     }

@@ -219,15 +219,16 @@ input#name.form-control {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12) !important;
   }
 
-/* input#searchShadow {
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.16), 0 1px wpx 0 rgba(0,0,0,0.12) !important
-}
+input#searchShadow {
+    box-shadow: none;
+    margin-top: 5px;
+}   
 
 a.linkNoDecoration {
     text-decoration: none !important;
     color: white !important;
     
-} */
+} 
 
 /* Single blog post */
 .blogContainer {
@@ -265,3 +266,20 @@ a.linkNoDecoration {
     height: 40vh;
 }
 .postBtn {min-width: 15%; font-size: 1.15em; padding: 10px;}
+.postBtn {min-width: 15%; font-size: 1em; padding: 5px;}
+
+.editContainer {
+    height: 80vh;
+    padding: 40px 70px;
+    border-radius: 5px;
+    background-color: #0094D8;
+    margin: 30px auto !important;
+}
+.txtboxShadow {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.editLabel > label {
+    color: white;
+    font-size: 1.1em;
+
+}
