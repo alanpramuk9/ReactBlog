@@ -1,1 +1,1 @@
-##Blog created with React, Node, and MySql. Hosted on Heroku. 
+# Blog created with React, Node, and MySql. Hosted on Heroku. 

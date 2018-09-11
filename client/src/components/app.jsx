@@ -14,6 +14,7 @@ import Signup from './signup';
 import Donate from './donate';
 import Contact from './contact';
 import About from './about';
+import Markdown from './mardown';
 
 class Navigation extends Component {
 
@@ -52,6 +53,7 @@ class Navigation extends Component {
                     <li className="nav-item">
                       <Link className="btn btn-info" to="/contact">CONTACT </Link>
                     </li>
+                    
                    </div>
                   </ul>
                 </div>
@@ -68,6 +70,7 @@ class Navigation extends Component {
                         <PrivateRoute exact path="/addpost" component={AddPost} />
                         <PrivateRoute exact path="/blogs/edit/:id" component={EditBlog} />
                         <Route exact path="/blogs/:id" component={SingleBlog} />
+                        <Route exact path="/markdown" component={Markdown} />
                         
                 </Switch>
                 </Fragment>
