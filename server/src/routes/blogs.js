@@ -16,25 +16,7 @@ AWS.config.update({
 
 let s3 = new AWS.S3();
 
-
-//app.use(bodyParser.json());
-// let upload = multer({
-//     storage: multerS3({
-//         s3,
-//         bucket: 'alanblogimage',
-//         acl: 'public-read',
-//         ContentType: multerS3.AUTO_CONTENT_TYPE,
-//         //contentDisposition: 'attachment',
-//         // ContentType: 'image/jpeg',
-//         // metadata: function (req, file, cb) {
-//         //     cb(null, { fieldName: file.fieldname });
-//         // },
-//         key: function (req, file, cb) {
-//             cb(null, Date.now() + '.jpg')
-//             //cb(null, Date.now().toString())
-//         }
-//     })
-// });
+//use multher to upload an image to AWS
 const upload = multer({
     storage: multerS3({
         s3: s3,
@@ -47,7 +29,6 @@ const upload = multer({
     })
 });
 
-
 //get all blogs
 router.get('/', (req, res) => {
     blogs.getAll()
@@ -55,6 +36,7 @@ router.get('/', (req, res) => {
         res.json(blogs);
     })
 });
+
 //get single blog
 router.get('/:id', (req, res) => {
     let id = req.params.id;
@@ -99,13 +81,13 @@ router.post('/', (req, res) => {
     })
     
 })
-//edit blog
+//update blog blog
 router.put('/:id', (req, res) => {
     console.log('updating some stuff');
     console.log(req.body);
     console.log(req.params);
     let id = req.params.id;
-    blogs.update(id, req.body)
+    blogs.update(req.body, id)
     .then((blogs) => {
         res.send(blogs)
     }).catch((err) => {
@@ -139,9 +121,33 @@ router.get('/create', (req,res) => {
 
 })
 
-
 export default router;
 
+
+///////////////////////////////////////////////////////////
+//code below to later reimplement users to upload photo for blog
+/////////////////////////////////////////////////////////////
+
+
+
+//app.use(bodyParser.json());
+// let upload = multer({
+//     storage: multerS3({
+//         s3,
+//         bucket: 'alanblogimage',
+//         acl: 'public-read',
+//         ContentType: multerS3.AUTO_CONTENT_TYPE,
+//         //contentDisposition: 'attachment',
+//         // ContentType: 'image/jpeg',
+//         // metadata: function (req, file, cb) {
+//         //     cb(null, { fieldName: file.fieldname });
+//         // },
+//         key: function (req, file, cb) {
+//             cb(null, Date.now() + '.jpg')
+//             //cb(null, Date.now().toString())
+//         }
+//     })
+// });
 
 //store all files in this place
 //const upload = multer({storage: storage});

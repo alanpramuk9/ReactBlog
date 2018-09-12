@@ -12,7 +12,6 @@ router.get('/me', tokenMiddleware, isLoggedIn, (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    
     generateHash(req.body.hash)
         .then((hash) => {
             users.insert({

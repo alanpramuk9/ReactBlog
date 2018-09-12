@@ -15,7 +15,7 @@
     "watch:client": "webpack --watch",
     "watch:server": "babel ./server/src -w -d ./server/lib"
   },
-  "author": "Covalence",
+  "author": "Alan Pramuk",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.234.1",

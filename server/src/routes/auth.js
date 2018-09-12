@@ -4,6 +4,7 @@ import { encode } from '../utils/tokens';
 import {generateHash } from '../utils/security';
 let router = Router();
 
+//login route
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', (err, token, info) => {
         if (err) {
@@ -16,6 +17,8 @@ router.post('/login', (req, res, next) => {
         }
     })(req, res, next);
 });
+
+//securing the route
 router.get('/generate/:pw', (req, res, next) => {
     generateHash(req.params.pw)
     .then((hash) =>{
@@ -24,6 +27,8 @@ router.get('/generate/:pw', (req, res, next) => {
         next(err)
     })
 })
+
+//checking if user can signup
 router.post('/signup', (req, res, next) => {
     passport.authenticate('local', (err, token, info) => {
         if (err) {
