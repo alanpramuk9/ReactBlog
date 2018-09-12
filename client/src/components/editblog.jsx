@@ -40,7 +40,7 @@ class EditBlog extends Component {
         //let id = this.props.match.params.id;
         
         let backUrl = '/blogs/' + this.props.match.params.id;
-        blogService.update(this.props.match.params.id, { content, title })
+        blogService.update(this.props.match.params.id, { title, content })
         .then(this.props.history.push(backUrl))
         .catch((err) => console.log(err));
     }
@@ -63,7 +63,7 @@ class EditBlog extends Component {
                                         onChange={(event) => this.handleContentChange(event.target.value)}></textarea>
                                 </div>
                                 <div style={{}}>
-                                <button onClick={() => {this.editThisBlog(this.state.content, this.state.title);}} className="btn btn-danger editBtn">Submit Edit</button>
+                                <button onClick={() => {this.editThisBlog(this.state.title, this.state.content, );}} className="btn btn-danger editBtn">Submit Edit</button>
                                 </div>
                             </form>
                         </div>
