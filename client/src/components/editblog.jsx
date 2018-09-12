@@ -6,8 +6,9 @@ class EditBlog extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "",
-            content: ""
+           
+            content: "",
+            title: ""
           
         }       
         
@@ -64,7 +65,7 @@ class EditBlog extends Component {
                                         onChange={(event) => this.handleContentChange(event.target.value)}></textarea>
                                 </div>
                                 <div style={{}}>
-                                <button onClick={() => {this.editThisBlog(this.state.content, this.state.title, );}} className="btn btn-danger editBtn">Submit Edit</button>
+                                <button onClick={() => {this.editThisBlog(this.state.content, this.state.title );}} className="btn btn-danger editBtn">Submit Edit</button>
                                 </div>
                             </form>
                         </div>
