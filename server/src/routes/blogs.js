@@ -87,7 +87,7 @@ router.put('/:id', (req, res) => {
     console.log(req.body);
     console.log(req.params);
     let id = req.params.id;
-    blogs.update(req.body, id)
+    blogs.update(id, req.body)
     .then((blogs) => {
         res.send(blogs)
     }).catch((err) => {

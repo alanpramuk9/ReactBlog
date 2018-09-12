@@ -37,7 +37,7 @@ class EditBlog extends Component {
         this.setState({ content });
     };
     
-    editThisBlog(title, content) {
+    editThisBlog(content, title) {
         
         //let id = this.props.match.params.id;
         
