@@ -14,6 +14,7 @@ import Signup from './signup';
 import Donate from './donate';
 import Contact from './contact';
 import About from './about';
+import Markdown from './markdown';
 
 class Navigation extends Component {
 
@@ -64,6 +65,7 @@ class Navigation extends Component {
                         <Route exact path="/logout" component={Logout} />
                         <Route exact path="/signup" component={Signup} />
                         <Route exact path="/donate" component={Donate} />
+                        <Route exact path="/markdown" component={Markdown} />
                         <Route exact path='/contact' component={Contact} />
                         <PrivateRoute exact path="/addpost" component={AddPost} />
                         <PrivateRoute exact path="/blogs/edit/:id" component={EditBlog} />

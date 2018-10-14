@@ -26,7 +26,6 @@ class Contact extends Component {
         sendContactEmail(this.state.name, this.state.email, this.state.message)
         .then(() => {
             //redirect to home page
-            //alert('Message sent successfully');
             this.props.history.push('/');
             $("#success").addClass("alert alert-success alert-dismissible")
             let b = document.createElement("button");
@@ -81,7 +80,6 @@ class Contact extends Component {
             </React.Fragment>
         )
     }
-
 }
 
 export default Contact;

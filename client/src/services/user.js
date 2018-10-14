@@ -25,28 +25,6 @@ function checkLogin() {
     }
 }
 
-// function signup(email, password) {
-//     // return baseService.makeFetch('/api/authors', {
-//     //     method: 'POST',
-//     //     body: JSON.stringify({ email, password }),
-//     //     headers: new Headers({
-//     //         'Content-Type': 'application/json'
-//     //     })
-//     }}.then((response) => {
-//         if (response.ok) {
-//             return response.json()
-//             .then((jsonResponse) => {
-//                 baseService.setAuthToken(jsonResponse.token);
-//                 loggedIn = true;
-//             });
-//         } else if (response.status === 401) {
-//             return response.json()
-//             .then((jsonResponse) => {
-//                 throw jsonResponse;
-//             });
-//         }
-//     });
-// }
 function login(email, password) {
     return baseService.makeFetch('/api/auth/login', {
         method: 'POST',

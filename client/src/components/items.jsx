@@ -5,7 +5,6 @@ class Contact extends Component {
     constructor(props) {
         super(props);
     }
-    
     render() {
       return (
           <div>
@@ -21,5 +20,4 @@ class Contact extends Component {
     }
 }
  
-
 export default Contact;

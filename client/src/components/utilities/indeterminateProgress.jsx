@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//shows progress bar while authentication of user processes
 class IndeterminateProgress extends Component {
     constructor(props) {
         super(props);

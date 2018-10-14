@@ -10,37 +10,26 @@ class Input extends Component {
             imagePreviewUrl: ""
         }
         this.handleImageChange = this.handleImageChange.bind(this);
-        
     }
-        handleTitleChange(title) {
-            this.setState({ title });
-        }
-        handleContentChange(content) {
-            this.setState({content})
-        }
-        handleImageChange(e) {
-            e.preventDefault();
-            let reader = new FileReader();
-           //console.log('e' +images.target.files[0].name);
-           let value = e.target.files[0];
-           let image = e.target.files[0].name;
-           // let file = images;
-            console.log(value);
-            //reader.readAsArrayBuffer(images.name);
-            //console.log('filesssss' + file.value);
-            //console.log('valueee' +e.target.value);
-            reader.onloadend = () => {
-              this.setState({
+    handleTitleChange(title) {
+        this.setState({ title });
+    }
+    handleContentChange(content) {
+        this.setState({content})
+    }
+    handleImageChange(e) {
+        e.preventDefault();
+        let reader = new FileReader();
+        let value = e.target.files[0];
+        let image = e.target.files[0].name;
+        reader.onloadend = () => {
+            this.setState({
                 image: value,
-                //image: file,
                 imagePreviewUrl: reader.result
-              }
-            );
-            console.log('reader read as text' +image);
-        }
-            reader.readAsDataURL(value);
-            //reader.readAsDataURL(file)
-          }
+            }
+        )};
+        reader.readAsDataURL(value);
+    }
     
     render() {
         let {imagePreviewUrl} = this.state;
@@ -64,12 +53,9 @@ class Input extends Component {
                     placeholder = "Enter your content"
                 />
                 <input 
-                    //value={this.state.image}
                     type='file'
                     name='image'
-                    //onChange={(event) => this.handleImageChange(event.target.value)}
                     onChange= {(e) => {this.handleImageChange(e)}}
-                    //onChange={(e)=>this.handleImageChange(e)}
                 />
                 <button 
                     onClick = {() => {this.props.postBlog(this.state.title, this.state.content, this.state.image)}}

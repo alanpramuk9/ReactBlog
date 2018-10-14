@@ -50,37 +50,16 @@ router.get('/:id', (req, res) => {
 
 //save Blog Post
 router.post('/', (req, res) => {
-    // router.post('/', upload.single('image'), (req,res,next) => {
-    //res.send("Uploaded!");
-    //console.log('req body ');
-   // console.log('req.body is ' +req.body);
-    //req.file = req.body.image;
-    // console.log('req file ' + req.file);
-    // console.log('req file location ' + req.file.location);
-   // req.body.image = req.file.buffer;
-    //console.log('router.put uri: ' + req.params.uri);
-    //console.log('router.put location: ' + req.file.location);
-    //console.log('creating a blog post');
-    //let file = req.file;
-    // let photo = {uri: req.file.location};
-    // req.body.image = photo;
-    //console.log('photo ' + photo);
-    //console.log(req.body);
-    //req.body.image = req.file.location;
     console.log(req.body);
     blogs.insert(req.body)
-    // .then(id => {
-    //     res.json(id);
-    // })
-    .then((result) => {
-        
+    .then((result) => { 
         result.sendStatus(200);
     })
     .catch((err) => {
         console.log(err);
     })
-    
 })
+
 //update blog blog
 router.put('/:id', (req, res) => {
     console.log('updating some stuff');
@@ -128,6 +107,25 @@ export default router;
 //code below to later reimplement users to upload photo for blog
 /////////////////////////////////////////////////////////////
 
+
+router.post('/', (req, res) => {
+    // router.post('/', upload.single('image'), (req,res,next) => {
+    //res.send("Uploaded!");
+    //console.log('req body ');
+   // console.log('req.body is ' +req.body);
+    //req.file = req.body.image;
+    // console.log('req file ' + req.file);
+    // console.log('req file location ' + req.file.location);
+   // req.body.image = req.file.buffer;
+    //console.log('router.put uri: ' + req.params.uri);
+    //console.log('router.put location: ' + req.file.location);
+    //console.log('creating a blog post');
+    //let file = req.file;
+    // let photo = {uri: req.file.location};
+    // req.body.image = photo;
+    //console.log('photo ' + photo);
+    //console.log(req.body);
+    //req.body.image = req.file.location;
 
 
 //app.use(bodyParser.json());
@@ -196,4 +194,5 @@ export default router;
 //         console.log(err);
 //     })
     
-// });
+// })
+// 

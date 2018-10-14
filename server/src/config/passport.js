@@ -8,6 +8,7 @@ import {checkPassword} from '../utils/security';
 let authorsTable = new Table('Authors');
 let tokensTable = new Table('Tokens');
 
+//passport is responsible for protecting api routes
 function configurePassport(app) {
     passport.use(new LocalStrategy({
         usernameField: 'email',

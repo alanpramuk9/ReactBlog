@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { isLoggedIn } from '../../services/user';
 
+//middleware to protect API routes 
 const PrivateRoute = (props) => {
     const Component = props.component;
     const propsToPass = Object.assign({}, props);

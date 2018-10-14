@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import * as userService from '../services/user';
-// import * as authorService from '../services/author';
 import { Redirect } from 'react-router-dom';
 import * as baseService from '../services/base';
 import IndeterminateProgress from './utilities/indeterminateProgress';
@@ -20,26 +19,25 @@ class Signup extends Component {
 
     componentDidMount() {
         userService.checkLogin()
-            .then((loggedIn) => {
-                if (loggedIn) {
-                    this.setState({ redirectToReferrer: true, checkingLogin: false });
-                } else {
-                    this.setState({ checkingLogin: false });
-                }
-            });
+        .then((loggedIn) => {
+            if (loggedIn) {
+                this.setState({ redirectToReferrer: true, checkingLogin: false });
+            } else {
+                this.setState({ checkingLogin: false });
+            }
+        });
     }
     signup(e) {
         e.preventDefault();
-        console.log('user', this.state.name + this.state.email + this.state.password)
         userService.newUser(this.state.name, this.state.email, this.state.password)
-            .then(() => {
-                this.setState({ redirectToReferrer: true });
-            })
-            .catch((err) => {
-                if (err.message) {
-                    this.setState({ feedbackMessage: err.message });
-                }
-            });
+        .then(() => {
+            this.setState({ redirectToReferrer: true });
+        })
+        .catch((err) => {
+            if (err.message) {
+                this.setState({ feedbackMessage: err.message });
+            }
+        });
     }
   
     handleNameChange(value) {

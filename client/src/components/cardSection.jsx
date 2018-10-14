@@ -7,12 +7,10 @@ import { CardElement } from 'react-stripe-elements';
         }
     }
 class CardSection extends React.Component {
-
     render() {
         return (
             <React.Fragment>
-            
-            <CardElement id="inputCheckbox" className="form-control" style={CardElementStyle} />
+                <CardElement id="inputCheckbox" className="form-control" style={CardElementStyle} />
             </React.Fragment>
         );
     }

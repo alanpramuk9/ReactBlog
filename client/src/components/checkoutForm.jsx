@@ -7,7 +7,6 @@ import CardSection from './cardSection';
 class CheckoutForm extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             customerName: ''
         }
@@ -31,16 +30,16 @@ class CheckoutForm extends Component {
     render() {
         return (
             <React.Fragment>
-            <div className='container checkout boxShadow' id='checkout'>
-            <div>
-                <h4>Enter your card information: </h4>
-            </div>
-            <form className='checkoutForm' onSubmit={(e) => this.handleSubmit(e)}>
-                <input className="form-control" onChange={(e) => this.handleNameInput(e)} placeholder="Name" htmlFor="name" id="name" />
-                <CardSection />
-                <button className="btn btn-primary checkoutButton">SUBMIT</button>
-            </form>
-            </div>
+                <div className='container checkout boxShadow' id='checkout'>
+                    <div>
+                        <h4>Enter your card information: </h4>
+                    </div>
+                    <form className='checkoutForm' onSubmit={(e) => this.handleSubmit(e)}>
+                        <input className="form-control" onChange={(e) => this.handleNameInput(e)} placeholder="Name" htmlFor="name" id="name" />
+                        <CardSection />
+                        <button className="btn btn-primary checkoutButton">SUBMIT</button>
+                    </form>
+                </div>
             </React.Fragment>
         );
     }
