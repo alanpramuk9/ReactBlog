@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { tokenMiddleware, isLoggedIn } from '../middleware/auth.mw';
 import Table from '../table';
 import { generateHash } from '../utils/security';
+import { isAdmin } from '../middleware/admin.mw';
 
 let router = Router();
 
@@ -26,5 +27,9 @@ router.post('/', (req, res) => {
             console.log(err)
         })
 })
+
+router.get('/admin', tokenMiddleware, isAdmin, (req, res) => {
+    res.json(req.user);
+});
 
 export default router;
